@@ -14,7 +14,10 @@ int main(void)
 		return -1;
 	}
 
-	write(fd, dump, BUFFER_SIZE);
+	if(write(fd, dump, BUFFER_SIZE) <= 0)
+		fprintf(stderr, "mtest1: write success");
+	else
+		fprintf(stderr, "mtest1: write failed");
 	sleep(3);
 	write(fd, dump, BUFFER_SIZE);
 	return 0;
