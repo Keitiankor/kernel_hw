@@ -1,5 +1,5 @@
-MY_TARGET := chr_test.ko
-obj-m := chr_test.o
+MY_TARGET := kernelhw.ko
+obj-m := kernelhw.o
 
 KERNEL_DIR := /lib/modules/$(shell uname -r)/build
 MODULE_DIR := /lib/modules/$(shell uname -r)/kernel/chr_test

@@ -82,7 +82,7 @@ struct file_operations mydrv_fops =
 
 int mydrv_init(void)
 {
-	if ((MYDRV_MAJOR = register_chrdev(243, DEVICE_NAME, &mydrv_fops)) < 0)
+	if ((MYDRV_MAJOR = register_chrdev(240, DEVICE_NAME, &mydrv_fops)) < 0)
 	{
 		printk(KERN_INFO "can't be registered \n");
 		return MYDRV_MAJOR;
@@ -99,6 +99,8 @@ int mydrv_init(void)
 
 void mydrv_cleanup(void)
 {
+	gpio_direction_output(GPIO_R, 0);
+	gpio_direction_output(GPIO_Y, 0);
 	kfree(mydrv_data);
 	unregister_chrdev(MYDRV_MAJOR, DEVICE_NAME);
 }

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <fcntl.h>
+#include <unistd.h>
 
 #define BUFFER_SIZE 50
 char dump[BUFFER_SIZE];

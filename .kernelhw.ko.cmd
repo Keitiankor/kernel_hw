@@ -1,0 +1,1 @@
+cmd_/home/pi/ker/kernel_hw/kernelhw.ko := ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /home/pi/ker/kernel_hw/kernelhw.ko /home/pi/ker/kernel_hw/kernelhw.o /home/pi/ker/kernel_hw/kernelhw.mod.o ;  true
