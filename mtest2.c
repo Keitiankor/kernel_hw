@@ -16,13 +16,13 @@ int main(void)
 
 	sleep(1);
 	if(read(fd, dump, BUFFER_SIZE) <= 0)
-		fprintf(stderr, "mtest1: write success");
+		fprintf(stderr, "mtest1: read failed");
 	else
-		fprintf(stderr, "mtest1: write failed");
+		fprintf(stderr, "mtest2: read success");
 	sleep(2);
 	if(read(fd, dump, BUFFER_SIZE) <= 0)
-		fprintf(stderr, "mtest1: write success");
+		fprintf(stderr, "mtest1: read failed");
 	else
-		fprintf(stderr, "mtest1: write failed");
+		fprintf(stderr, "mtest1: read success");
 	return 0;
 }
