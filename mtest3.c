@@ -16,8 +16,9 @@ int main(void)
 
 	sleep(2);
 	if(read(fd, dump, BUFFER_SIZE) <= 0)
-		fprintf(stderr, "mtest3: read failed");
+		fprintf(stderr, "mtest3: read failed \n");
 	else
-		fprintf(stderr, "mtest3: read success");
+		fprintf(stderr, "mtest3: read success \n");
+	sleep(1);
 	return 0;
 }
