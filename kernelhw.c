@@ -105,3 +105,5 @@ void mydrv_cleanup(void)
 
 module_init(mydrv_init);
 module_exit(mydrv_cleanup);
+
+MODULE_LICENSE("GPL");
