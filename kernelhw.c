@@ -44,8 +44,7 @@ static ssize_t mydrv_read(struct file *file, char *buf, size_t count, loff_t *pp
 	count = MIN((mydrv_write_offset - mydrv_read_offset), count);
 	if (copy_to_user(buf, mydrv_data + mydrv_read_offset, count))
 		return -EFAULT;
-	mydrv_read_offset =+ count;
-	printk(KERN_INFO "R - W : %d, R : %d C : %d \n",mydrv_write_offset,mydrv_read_offset,count);
+	mydrv_read_offset += count;
  	if (mydrv_read_offset == mydrv_write_offset)
 	{
 		gpio_direction_output(GPIO_R, 1);
@@ -63,7 +62,6 @@ static ssize_t mydrv_write(struct file *file, const char *buf, size_t count, lof
 	if (copy_from_user(mydrv_data + mydrv_write_offset, buf, count))
 		return -EFAULT;
 	mydrv_write_offset += count;
-	printk(KERN_INFO "W - W : %d, R : %d C : %d \n",mydrv_write_offset,mydrv_read_offset,count);
 	if (mydrv_read_offset != mydrv_write_offset)
 	{
 		gpio_direction_output(GPIO_Y, 1);
