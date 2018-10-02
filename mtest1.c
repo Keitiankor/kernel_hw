@@ -17,4 +17,5 @@ int main(void)
 	write(fd, dump, BUFFER_SIZE);
 	sleep(3);
 	write(fd, dump, BUFFER_SIZE);
+	return 0;
 }

@@ -16,4 +16,5 @@ int main(void)
 
 	sleep(2);
 	read(fd, dump, BUFFER_SIZE);
+	return 0;
 }
