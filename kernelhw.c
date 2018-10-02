@@ -82,7 +82,7 @@ struct file_operations mydrv_fops =
 
 int mydrv_init(void)
 {
-	if ((MYDRV_MAJOR = register_chrdev(240, DEVICE_NAME, &mydrv_fops)) < 0)
+	if (register_chrdev(MYDRV_MAJOR = 243, DEVICE_NAME, &mydrv_fops) < 0)
 	{
 		printk(KERN_INFO "can't be registered \n");
 		return MYDRV_MAJOR;
